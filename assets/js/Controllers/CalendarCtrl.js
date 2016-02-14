@@ -1,7 +1,7 @@
 kiosk.controller('CalendarCtrl', ['$scope', '$http', 'ServerData', function($scope, $http, ServerData) {
     var data = ServerData.get();
     var premonthBuffer = 0;
-    $scope.imageUrl = 'http://192.168.0.11:8080/assets/img/february2016%20-%20PopArt%20Studio.png';
+    $scope.imageUrl = '/assets/img/february2016%20-%20PopArt%20Studio.png';
     $scope.imageCredit = 'PopArt Studio'
     $scope.weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
     $scope.calendarData = [];
