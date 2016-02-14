@@ -1,0 +1,43 @@
+<div
+    ng-controller="CalendarCtrl"
+    class="page calendar-view"
+    ng-class="{ active: $index == activeIndex }"
+    style="top: {{ ($index - activeIndex) * 100 }}%; background-color: {{ page.color }};"
+>
+    <div class="calendar-image" style="background-image: url('{{ imageUrl }}')"></div>
+
+    <div class="calendar-container">
+        <table>
+            <tr class="table-head">
+                <td ng-repeat="(dayIndex, day) in weekDays track by 'weekDay-' + dayIndex" class="day-{{ day }}">{{ day }}</td>
+            </tr>
+            <tr class="table-data" ng-repeat="(weekIndex, week) in month">
+                <td
+                    class="table-data"
+                    ng-repeat="(dayIndex, day) in week track by 'day-' + dayIndex"
+                    ng-class="{ 'faded': day.faded, 'selected': day.selected }"
+                    ng-click="select(dayIndex, weekIndex)"
+                >
+                    <span class="date">{{ day.date }}</span>
+                    <div
+                        class="event"
+                        ng-repeat="(eventIndex, event) in day.start track by 'event-' + dayIndex + eventIndex"
+                        style="width: {{ 86 * event.duration }}px;"
+                    >
+                        {{ event.name }}
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="calendar-details">
+        <h1>{{ selected.date }}</h1>
+        <div class="empty-state" ng-show="selected.events.length == 0">No events scheduled</div>
+        <div ng-repeat="(eventIndex, event) in selected.events track by 'expandedevent-' + eventIndex" class="event">
+            <h2 class="name">{{ event.name }}</h2>
+            <span class="spacetime">{{ event.time }}<span ng-show="event.time && event.where"> at </span>{{event.where}}</span>
+            <div class="description">{{ event.description }}</div>
+        </div>
+        <div class="photo-credit">Image Credit: {{ imageCredit }}</div>
+    </div>
+</div>

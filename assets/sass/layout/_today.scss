@@ -1,0 +1,22 @@
+.today {
+    background-color: #232323;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .time {
+        display: block;
+        font-size: 52px;
+        line-height: 1em;
+    }
+    .date {
+        display: block;
+        font-size: 36px;
+        line-height: 1em;
+    }
+}

@@ -1,0 +1,54 @@
+<div
+    ng-controller="NewsExpansion"
+    class="page front-view"
+    ng-class="{ active: $index == activeIndex }"
+    style="top: {{ ($index - activeIndex) * 100 }}%; background-color: {{ page.color }};"
+>
+    <div class="header" style="background-image: url('{{ page.heroImage }}');">
+        <div class="content">
+            <h1 class="title">{{ page.data.title }}</h1>
+            <div class="description" ng-bind-html="page.data.description"> </div>
+        </div>
+    </div>
+
+    <div class="article-primary-container">
+        <div
+            class="article article-primary article-primary-index-{{ articleIndex }}"
+            ng-repeat="(articleIndex, article) in page.data.articles.primary"
+        >
+            <div class="id" ng-show="false">{{ articleIndex }}</div>
+            <div class="image" style="background-image: url('{{ article.imageUrl }}')"> </div>
+            <div class="article-text">
+                <h1 class="title">{{ article.title }}</h1>
+                <div class="description description-short" ng-hide="articleExpansion.primary[articleIndex]">
+                    {{ article.short }}
+                </div>
+                <div class="description description-long" ng-show="articleExpansion.primary[articleIndex]">
+                    {{ article.description }}
+                </div>
+                <a href="#"
+                    class="btn btn-right btn-flat btn-blue"
+                    ng-click="expand('primary', articleIndex)"
+                >Read {{ articleExpansion.primary[articleIndex] ? 'less' : 'more' }}</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-secondary-container">
+        <div
+            class="article article-secondary article-secondary-index-{{ articleIndex }}"
+            ng-repeat="(articleIndex, article) in page.data.articles.secondary"
+        >
+            <div class="id" ng-show="false">{{ articleIndex }}</div>
+            <div class="article-text">
+                <h1 class="title">{{ article.title }}</h1>
+                <div class="description">
+                    {{ article.description }}
+                </div>
+                <div class="information">
+                    {{ article.info }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

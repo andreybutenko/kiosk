@@ -1,0 +1,23 @@
+<div
+    ng-controller="ScheduleCtrl"
+    class="page schedule-view"
+    ng-class="{ active: $index == activeIndex }"
+    style="top: {{ ($index - activeIndex) * 100 }}%; background-color: {{ page.color }};"
+>
+    <div class="schedule">
+        <h1 class="day">{{ schedules[today].title }}</h1>
+        <div class="period" ng-repeat="period in schedules[today].schedule" ng-class="{ 'current': period.selected }">
+            <div class="label">{{ period.label }}</div>
+            <div class="start">{{ period.start }}</div>
+            <div class="dash">-</div>
+            <div class="end">{{ period.end }}</div>
+        </div>
+    </div>
+
+    <div class="days-list">
+        <div class="day" ng-repeat="day in schedules">
+            <span class="name">{{ day.title }}</span>
+            <span class="note">{{ day.subtitle }}</span>
+        </div>
+    </div>
+</div>

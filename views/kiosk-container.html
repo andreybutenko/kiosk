@@ -1,0 +1,32 @@
+<div class="bar" ng-controller="ResizeBar">
+    <div class="bar-element today">
+        <span class="time">{{ now.time }}</span>
+        <span class="date">{{ now.date }}</span>
+    </div>
+    <div
+        class="bar-element tab tab-{{ $index }}"
+        ng-repeat="page in pages"
+        ng-click="switchTo($index)"
+        ng-class="{ active: $index == activeIndex }"
+        style="background-color: {{ page.color }}"
+    >
+        <span class="title">{{ page.title }}</span>
+    </div>
+</div>
+
+<div class="main-content">
+    <div
+        ng-repeat="page in pages"
+        ui-view="{{ page.type || 'genericView' }}"
+    >
+    </div>
+    <!--
+    <div
+        class="page page-{{ $index }}"
+        ng-repeat="page in pages"
+        ng-class="{ active: $index == activeIndex }"
+        style="top: {{ ($index - activeIndex) * 100 }}%;"
+    >
+        {{ page.title }}
+    </div>-->
+</div>

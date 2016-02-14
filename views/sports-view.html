@@ -1,0 +1,29 @@
+<div
+    class="page sports-view"
+    ng-class="{ active: $index == activeIndex }"
+    style="top: {{ ($index - activeIndex) * 100 }}%; background-color: {{ page.color }};"
+>
+    <div class="header" style="background-image: url('{{ page.heroImage }}');">
+        <div class="content">
+            <h1 class="title">{{ page.data.title }}</h1>
+            <div class="description" ng-bind-html="page.data.description"> </div>
+        </div>
+    </div>
+    <div class="results">
+        <table>
+            <tr class="table-head">
+                <td class="team">Team</td>
+                <td class="score">Score</td>
+                <td class="opponent">Opponent</td>
+            </tr>
+            <tr ng-repeat="result in page.data.results">
+                <td class="team">{{ result.team }}</td>
+                <td class="score">{{ result.score }}</td>
+                <td class="opponent">{{ result.opponent }}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="next">
+
+    </div>
+</div>

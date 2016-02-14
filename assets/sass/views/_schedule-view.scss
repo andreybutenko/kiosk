@@ -1,0 +1,45 @@
+.schedule-view {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    .schedule {
+        background-color: white;
+        margin-top: 337px;
+        border-bottom: 1px solid $border;
+
+        .day {
+            padding: 10px;
+        }
+
+        .period {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            border-top: 1px solid $border;
+            padding: 0.5em;
+
+            &.current {
+                background-color: $border;
+            }
+
+            .label {
+                width: 200px;
+            }
+
+            .dash {
+                text-align: center;
+                width: 20px;
+            }
+
+            .start, .end {
+                width: 100px;
+            }
+
+            .start {
+                text-align: right;
+            }
+        }
+    }
+}

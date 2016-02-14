@@ -1,0 +1,20 @@
+// out: ../css/styles.css, compress: false
+@charset 'utf-8';
+
+@import 'util/vars';
+@import 'util/etc';
+@import 'util/btn';
+
+@import 'layout/kiosk-container';
+
+@import 'layout/bar';
+@import 'layout/tab';
+@import 'layout/today';
+
+@import 'layout/main-content';
+@import 'layout/page';
+
+@import 'views/front-view';
+@import 'views/sports-view';
+@import 'views/calendar-view';
+@import 'views/schedule-view';

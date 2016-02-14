@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="kiosk">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>IHS Kiosk</title>
+        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Oswald:700|Open+Sans' type='text/css'>
+        <link rel="stylesheet" href="/assets/css/styles.css" type="text/css">
+    </head>
+    <body>
+        <div ui-view class="kiosk-container" ng-controller="TabManager">
+        </div>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js" type="text/javascript"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-sanitize.js" type="text/javascript"></script>
+        <script src="/assets/js/angular-ui-router.min.js" type="text/javascript"></script>
+
+        <script src="/assets/js/moment.min.js" type="text/javascript"></script>
+
+        <script src="/assets/js/app.js" type="text/javascript"></script>
+
+        <script src="/assets/js/Services/ServerData.js" type="text/javascript"></script>
+
+        <script src="/assets/js/Controllers/TabManager.js" type="text/javascript"></script>
+        <script src="/assets/js/Controllers/ResizeBar.js" type="text/javascript"></script>
+        <script src="/assets/js/Controllers/NewsExpansion.js" type="text/javascript"></script>
+        <script src="/assets/js/Controllers/CalendarCtrl.js" type="text/javascript"></script>
+        <script src="/assets/js/Controllers/ScheduleCtrl.js" type="text/javascript"></script>
+    </body>
+</html>

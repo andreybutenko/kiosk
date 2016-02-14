@@ -1,0 +1,11 @@
+.bar {
+    height: 100%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: #6d676e;
+
+    .bar-element {
+        width: 100%;
+    }
+}
