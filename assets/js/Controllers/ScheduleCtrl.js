@@ -42,16 +42,10 @@ kiosk.controller('ScheduleCtrl', ['$scope', '$interval', 'ServerData', function(
                 hour = 0;
             }
 
-            var score = 0;
-            score += hour * 60;
-            score += minute;
-            console.log(time, subSplit[0], subSplit[1], score);
-            return score;
+            return (hour * 60) + minute;
         }
-        getTimeScore('12:59 am')
-        getTimeScore('1:00 am')
-        getTimeScore('11:59 am')
-        getTimeScore('12:00 pm')
+
+
     }
 
     init();
