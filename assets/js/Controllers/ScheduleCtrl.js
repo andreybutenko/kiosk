@@ -45,7 +45,19 @@ kiosk.controller('ScheduleCtrl', ['$scope', '$interval', 'ServerData', function(
             return (hour * 60) + minute;
         }
 
-
+        var currScore = getTimeScore(moment().format('h:mm a'));
+        for(var i = 0; i < schedules.length; i++) {
+            for(var j = 0; j < schedules[i].schedule.length; j++) {
+                var startScore = getTimeScore(schedules[i].schedule[j].start);
+                var endScore = getTimeScore(schedules[i].schedule[j].end);
+                if((startScore <= currScore) && (endScore >= currScore)) {
+                    schedules[i].schedule[j].selected = true;
+                }
+                else {
+                    schedules[i].schedule[j].selected = false;
+                }
+            }
+        }
     }
 
     init();
