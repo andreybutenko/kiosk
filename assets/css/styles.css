@@ -1,73 +1,120 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: 'Open Sans', sans-serif;
+}
 
-html, body {
+html,
+body {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+}
 
 * {
-  box-sizing: border-box; }
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0 !important; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 !important;
+}
 
 .btn {
   text-decoration: none;
   color: black;
   padding: 0.5em;
-  margin: 0.5em 0; }
+  margin: 0.5em 0;
+}
 
 .btn-right {
-  float: right; }
+  float: right;
+}
 
 .btn-flat {
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 .btn-flat.btn-blue {
-  color: #4aa3df; }
+  color: #4aa3df;
+}
 
 .kiosk-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   height: 100%;
-  width: 100%; }
+  width: 100%;
+}
 
 .bar {
   height: 100%;
   width: 300px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
-  background-color: #6d676e; }
-  .bar .bar-element {
-    width: 100%; }
+  background-color: #6d676e;
+}
+
+.bar .bar-element {
+  width: 100%;
+}
 
 .tab {
   background-color: green;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex: 1;
   flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   -webkit-transition: -webkit-clip-path 250ms, clip-path 250ms;
-  transition: -webkit-clip-path 250ms, clip-path 250ms; }
-  .tab .title {
-    font-family: 'Oswald', sans-serif;
-    font-size: 52px;
-    font-weight: 700;
-    color: white;
-    text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.5); }
+  transition: -webkit-clip-path 250ms, clip-path 250ms;
+}
+
+.tab .title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 6px 6px 0px rgba(0,0,0,0.5);
+}
 
 .tab:nth-of-type(odd) {
   -webkit-clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%);
-  clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%); }
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%);
+}
 
 .tab:nth-of-type(even) {
   -webkit-clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
-  clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%); }
+  clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
+}
 
 .tab.active {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
 
 .today {
   background-color: #232323;
@@ -76,22 +123,41 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 20px;
   padding-bottom: 20px;
   height: 400px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
-  justify-content: flex-end; }
-  .today .time {
-    display: block;
-    font-size: 52px;
-    line-height: 1em; }
-  .today .date {
-    display: block;
-    font-size: 36px;
-    line-height: 1em; }
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.today .time {
+  display: block;
+  font-size: 52px;
+  line-height: 1em;
+}
+
+.today .date {
+  display: block;
+  font-size: 36px;
+  line-height: 1em;
+}
 
 .main-content {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex: 1;
   flex-grow: 1;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .page {
   padding: 0;
@@ -99,190 +165,430 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   width: 100%;
   -webkit-transition: top 250ms;
-  transition: top 250ms; }
+  transition: top 250ms;
+}
 
 .front-view {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
-  align-items: center; }
-  .front-view .header {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 100%;
-    height: 400px;
-    background-position: center; }
-    .front-view .header .content {
-      width: 640px;
-      background-color: rgba(255, 255, 255, 0.7);
-      text-align: center;
-      padding: 40px; }
-  .front-view .article-primary-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: nowrap;
-    width: 640px; }
-    .front-view .article-primary-container .article-primary {
-      background-color: white;
-      display: flex;
-      flex-wrap: nowrap;
-      max-height: 200px;
-      overflow-y: hidden;
-      width: 100%;
-      transition: max-height 1000ms ease-out; }
-      .front-view .article-primary-container .article-primary .image {
-        flex: 0 0 300px;
-        background-size: cover;
-        background-position: center; }
-      .front-view .article-primary-container .article-primary .article-text {
-        padding: 10px;
-        border-bottom: solid 1px #ddd; }
-        .front-view .article-primary-container .article-primary .article-text .title {
-          font-size: 24px; }
-  .front-view .article-secondary-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width: 640px; }
-    .front-view .article-secondary-container .article-secondary {
-      flex-grow: 1;
-      background-color: white;
-      border-right: solid 1px #ddd; }
-      .front-view .article-secondary-container .article-secondary .article-text {
-        padding: 1em 10px; }
-        .front-view .article-secondary-container .article-secondary .article-text .title {
-          font-size: 18px; }
-        .front-view .article-secondary-container .article-secondary .article-text .description {
-          margin-top: 10px; }
-        .front-view .article-secondary-container .article-secondary .article-text .information {
-          margin-top: 0.5em;
-          color: #7a7a7a; }
-  .front-view .article-primary-container .article-expanded, .front-view .article-secondary-container .article-expanded {
-    max-height: 100vh;
-    transition: max-height 1000ms ease-in; }
-  .front-view .description {
-    transition: all 1000ms; }
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.front-view .header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  width: 100%;
+  height: 400px;
+  background-position: center;
+}
+
+.front-view .header .content {
+  width: 640px;
+  background-color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 40px;
+}
+
+.front-view .article-primary-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  width: 640px;
+}
+
+.front-view .article-primary-container .article-primary {
+  background-color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  max-height: 200px;
+  overflow-y: hidden;
+  width: 100%;
+  -webkit-transition: max-height 1000ms ease-out;
+  transition: max-height 1000ms ease-out;
+}
+
+.front-view .article-primary-container .article-primary .image {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 300px;
+  -ms-flex: 0 0 300px;
+  flex: 0 0 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+.front-view .article-primary-container .article-primary .article-text {
+  padding: 10px;
+  border-bottom: solid 1px #ddd;
+}
+
+.front-view .article-primary-container .article-primary .article-text .title {
+  font-size: 24px;
+}
+
+.front-view .article-secondary-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  width: 640px;
+}
+
+.front-view .article-secondary-container .article-secondary {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex: 1;
+  flex-grow: 1;
+  background-color: white;
+  border-right: solid 1px #ddd;
+}
+
+.front-view .article-secondary-container .article-secondary .article-text {
+  padding: 1em 10px;
+}
+
+.front-view .article-secondary-container .article-secondary .article-text .title {
+  font-size: 18px;
+}
+
+.front-view .article-secondary-container .article-secondary .article-text .description {
+  margin-top: 10px;
+}
+
+.front-view .article-secondary-container .article-secondary .article-text .information {
+  margin-top: 0.5em;
+  color: #7a7a7a;
+}
+
+.front-view .article-primary-container .article-expanded,
+.front-view .article-secondary-container .article-expanded {
+  max-height: 100vh;
+  -webkit-transition: max-height 1000ms ease-in;
+  transition: max-height 1000ms ease-in;
+}
+
+.front-view .description {
+  -webkit-transition: all 1000ms;
+  transition: all 1000ms;
+}
 
 .sports-view {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
-  align-items: center; }
-  .sports-view .header {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 400px;
-    width: 100%;
-    background-position: center; }
-    .sports-view .header .content {
-      width: 640px;
-      background-color: rgba(255, 255, 255, 0.7);
-      text-align: center;
-      padding: 40px; }
-  .sports-view .results {
-    width: 640px;
-    background-color: white;
-    padding-bottom: 1em; }
-    .sports-view .results table {
-      width: 100%; }
-      .sports-view .results table .table-head td {
-        color: #7a7a7a;
-        padding: 1em 0; }
-      .sports-view .results table .team {
-        text-align: right; }
-      .sports-view .results table .score {
-        text-align: center; }
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.sports-view .header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  height: 400px;
+  width: 100%;
+  background-position: center;
+}
+
+.sports-view .header .content {
+  width: 640px;
+  background-color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 40px;
+}
+
+.sports-view .results {
+  width: 640px;
+  background-color: white;
+  padding-bottom: 1em;
+}
+
+.sports-view .results table {
+  width: 100%;
+}
+
+.sports-view .results table .table-head td {
+  color: #7a7a7a;
+  padding: 1em 0;
+}
+
+.sports-view .results table .team {
+  text-align: right;
+}
+
+.sports-view .results table .score {
+  text-align: center;
+}
 
 .calendar-view {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
-  align-items: center; }
-  .calendar-view .calendar-image {
-    width: 100%;
-    height: 400px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; }
-  .calendar-view .calendar-container {
-    width: 640px;
-    margin-top: -26px; }
-    .calendar-view .calendar-container table {
-      width: 639px;
-      border-collapse: collapse;
-      font-size: 12px; }
-      .calendar-view .calendar-container table tr.table-data {
-        background-color: white;
-        color: black;
-        height: 88px; }
-      .calendar-view .calendar-container table td.table-data {
-        margin: 0;
-        width: 88px;
-        border: 1px solid #ddd;
-        position: relative;
-        vertical-align: top; }
-      .calendar-view .calendar-container table .table-head {
-        color: white;
-        font-family: 'Oswald', 'Open Sans', sans-serif;
-        font-weight: 700;
-        font-size: 24px;
-        text-align: center;
-        text-transform: uppercase;
-        line-height: 1em; }
-      .calendar-view .calendar-container table .faded .date {
-        color: #7a7a7a; }
-      .calendar-view .calendar-container table .selected {
-        background-color: #ddd; }
-    .calendar-view .calendar-container .event {
-      position: absolute;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      background-color: #4aa3df;
-      padding: 5px;
-      z-index: 2; }
-  .calendar-view .calendar-details {
-    width: 640px;
-    background-color: white; }
-    .calendar-view .calendar-details h1 {
-      padding: 1em;
-      font-size: 24px; }
-    .calendar-view .calendar-details .empty-state {
-      padding: 0 1em 1em 1em; }
-    .calendar-view .calendar-details .event {
-      border-top: 1px solid #ddd;
-      padding: 1em;
-      padding-left: 2em; }
-    .calendar-view .calendar-details .photo-credit {
-      text-align: right;
-      color: #7a7a7a;
-      padding: 0.5em; }
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
 
-.schedule-view {
+.calendar-view .calendar-image {
+  width: 100%;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.calendar-view .calendar-container {
+  width: 640px;
+  margin-top: -26px;
+}
+
+.calendar-view .calendar-container table {
+  width: 639px;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.calendar-view .calendar-container table tr.table-data {
+  background-color: white;
+  color: black;
+  height: 88px;
+}
+
+.calendar-view .calendar-container table td.table-data {
+  margin: 0;
+  width: 88px;
+  border: 1px solid #ddd;
+  position: relative;
+  vertical-align: top;
+}
+
+.calendar-view .calendar-container table .table-head {
+  color: white;
+  font-family: 'Oswald', 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1em;
+}
+
+.calendar-view .calendar-container table .faded .date {
+  color: #7a7a7a;
+}
+
+.calendar-view .calendar-container table .selected {
+  background-color: #ddd;
+}
+
+.calendar-view .calendar-container .event {
+  position: absolute;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background-color: #4aa3df;
+  padding: 5px;
+  z-index: 2;
+}
+
+.calendar-view .calendar-details {
+  width: 640px;
+  background-color: white;
+}
+
+.calendar-view .calendar-details h1 {
+  padding: 1em;
+  font-size: 24px;
+}
+
+.calendar-view .calendar-details .empty-state {
+  padding: 0 1em 1em 1em;
+}
+
+.calendar-view .calendar-details .event {
+  border-top: 1px solid #ddd;
+  padding: 1em;
+  padding-left: 2em;
+}
+
+.calendar-view .calendar-details .photo-credit {
+  text-align: right;
+  color: #7a7a7a;
+  padding: 0.5em;
+}
+
+.schedule-view .schedule-container {
+  margin-top: 337px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  align-items: center; }
-  .schedule-view .schedule {
-    background-color: white;
-    margin-top: 337px;
-    border-bottom: 1px solid #ddd; }
-    .schedule-view .schedule .day {
-      padding: 10px; }
-    .schedule-view .schedule .period {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      border-top: 1px solid #ddd;
-      padding: 0.5em; }
-      .schedule-view .schedule .period.current {
-        background-color: #ddd; }
-      .schedule-view .schedule .period .label {
-        width: 200px; }
-      .schedule-view .schedule .period .dash {
-        text-align: center;
-        width: 20px; }
-      .schedule-view .schedule .period .start, .schedule-view .schedule .period .end {
-        width: 100px; }
-      .schedule-view .schedule .period .start {
-        text-align: right; }
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.schedule-view .schedule-container .schedule-space {
+  -webkit-transition: margin-left 250ms;
+  transition: margin-left 250ms;
+}
+
+.schedule-view .schedule-container .schedule {
+  background-color: white;
+  border: 1px solid #ddd;
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  -webkit-transition: -webkit-transform 250ms;
+  transition: -ms-transform 250ms;
+  transition: transform 250ms;
+  box-shadow: 0px 0px 30px 2px #000000;
+}
+
+.schedule-view .schedule-container .schedule:first-of-type {
+  margin-left: 0;
+}
+
+.schedule-view .schedule-container .schedule.selected {
+  margin-left: 0;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.schedule-view .schedule-container .schedule.currentDay .period.current {
+  background-color: #ddd;
+}
+
+.schedule-view .schedule-container .schedule.afterDay {
+  margin-left: -44px;
+}
+
+.schedule-view .schedule-container .schedule.afterDay.adjacentDay {
+  margin-left: -22px;
+}
+
+.schedule-view .schedule-container .schedule.beforeDay {
+  margin-right: -44px;
+}
+
+.schedule-view .schedule-container .schedule.beforeDay.adjacentDay {
+  margin-right: -22px;
+}
+
+.schedule-view .schedule-container .schedule .day {
+  padding: 10px;
+}
+
+.schedule-view .schedule-container .schedule .period {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  border-top: 1px solid #ddd;
+  padding: 0.5em;
+}
+
+.schedule-view .schedule-container .schedule .period .label {
+  width: 200px;
+}
+
+.schedule-view .schedule-container .schedule .period .dash {
+  text-align: center;
+  width: 20px;
+}
+
+.schedule-view .schedule-container .schedule .period .start,
+.schedule-view .schedule-container .schedule .period .end {
+  width: 100px;
+}
+
+.schedule-view .schedule-container .schedule .period .start {
+  text-align: right;
+}
+
+/*# sourceMappingURL=styles.css.map */

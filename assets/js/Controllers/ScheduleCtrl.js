@@ -1,9 +1,13 @@
-kiosk.controller('ScheduleCtrl', ['$scope', '$interval', 'ServerData', function($scope, $interval, ServerData) {
+kiosk.controller('ScheduleCtrl', ['$scope', '$interval', '$window', 'ServerData', function($scope, $interval, $window, ServerData) {
     var viewData = ServerData.get('scheduleView');
     var schedules = viewData.data.schedules;
 
     $scope.schedules = {};
     $scope.today = 0;
+    $scope.selected = 0;
+
+    var debugDay = null; // ex: 'Tuesday'
+    var debugScore = null; // ex: 8 * 60
 
     function init() {
         $scope.schedules = schedules;
@@ -20,8 +24,10 @@ kiosk.controller('ScheduleCtrl', ['$scope', '$interval', 'ServerData', function(
 
     function update() {
         for(var i = 0; i < schedules.length; i++) {
-            if(schedules[i].title == moment().format('dddd')) {
-                today = i;
+            var searchDay = debugDay || moment().format('dddd');
+            if(schedules[i].title == searchDay) {
+                $scope.today = i;
+                $scope.selected = i;
                 break;
             }
         }
@@ -45,11 +51,13 @@ kiosk.controller('ScheduleCtrl', ['$scope', '$interval', 'ServerData', function(
             return (hour * 60) + minute;
         }
 
-        var currScore = getTimeScore(moment().format('h:mm a'));
+        var currScore = debugScore || getTimeScore(moment().format('h:mm a'));
+
         for(var i = 0; i < schedules.length; i++) {
             for(var j = 0; j < schedules[i].schedule.length; j++) {
                 var startScore = getTimeScore(schedules[i].schedule[j].start);
                 var endScore = getTimeScore(schedules[i].schedule[j].end);
+
                 if((startScore <= currScore) && (endScore >= currScore)) {
                     schedules[i].schedule[j].selected = true;
                 }
@@ -58,6 +66,18 @@ kiosk.controller('ScheduleCtrl', ['$scope', '$interval', 'ServerData', function(
                 }
             }
         }
+    }
+
+    $scope.calculateSpace = function calculateSpace() {
+        return (($window.innerWidth - 300) / 2) - ((436 / 2) + ($scope.selected * 436));
+    }
+
+    $scope.calculateZ = function calculateZ(total, index, selected) {
+        return total - Math.abs(selected - index) - 1;
+    }
+
+    $scope.switchTo = function switchTo(index) {
+        $scope.selected = index;
     }
 
     init();

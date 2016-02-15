@@ -4,20 +4,16 @@
     ng-class="{ active: $index == activeIndex }"
     style="top: {{ ($index - activeIndex) * 100 }}%; background-color: {{ page.color }};"
 >
-    <div class="schedule">
-        <h1 class="day">{{ schedules[today].title }}</h1>
-        <div class="period" ng-repeat="period in schedules[today].schedule" ng-class="{ 'current': period.selected }">
-            <div class="label">{{ period.label }}</div>
-            <div class="start">{{ period.start }}</div>
-            <div class="dash">-</div>
-            <div class="end">{{ period.end }}</div>
-        </div>
-    </div>
-
-    <div class="days-list">
-        <div class="day" ng-repeat="day in schedules">
-            <span class="name">{{ day.title }}</span>
-            <span class="note">{{ day.subtitle }}</span>
+    <div class="schedule-container">
+        <div class="schedule-space" style="margin-left: {{ calculateSpace() }}px;"></div>
+        <div class="schedule" ng-repeat="(dayIndex, day) in schedules" ng-class="{ 'currentDay': dayIndex == today, 'selected': dayIndex == selected, 'adjacentDay': (dayIndex == selected + 1) || (dayIndex == selected - 1), 'afterDay': dayIndex > selected, 'beforeDay': dayIndex < selected }" style="z-index: {{ calculateZ(schedules.length, dayIndex, selected) }}" ng-click="switchTo(dayIndex)">
+            <h1 class="day">{{ day.title }}</h1>
+            <div class="period" ng-repeat="period in day.schedule" ng-class="{ 'current': period.selected }">
+                <div class="label">{{ period.label }}</div>
+                <div class="start">{{ period.start }}</div>
+                <div class="dash">-</div>
+                <div class="end">{{ period.end }}</div>
+            </div>
         </div>
     </div>
 </div>

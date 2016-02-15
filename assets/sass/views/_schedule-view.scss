@@ -1,44 +1,76 @@
 .schedule-view {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-
-    .schedule {
-        background-color: white;
+    .schedule-container {
         margin-top: 337px;
-        border-bottom: 1px solid $border;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
 
-        .day {
-            padding: 10px;
+        .schedule-space {
+            transition: margin-left 250ms;
         }
 
-        .period {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            border-top: 1px solid $border;
-            padding: 0.5em;
+        .schedule {
+            background-color: white;
+            border: 1px solid $border;
+            transform: scale(0.9);
+            transition: transform 250ms;
+            box-shadow: 0px 0px 30px 2px #000000;
 
-            &.current {
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            &.selected {
+                margin-left: 0;
+                transform: none;
+            }
+
+            &.currentDay .period.current {
                 background-color: $border;
             }
 
-            .label {
-                width: 200px;
+            &.afterDay {
+                margin-left: -44px;
+                &.adjacentDay {
+                    margin-left: -22px;
+                }
             }
 
-            .dash {
-                text-align: center;
-                width: 20px;
+            &.beforeDay {
+                margin-right: -44px;
+                &.adjacentDay {
+                    margin-right: -22px;
+                }
             }
 
-            .start, .end {
-                width: 100px;
+            .day {
+                padding: 10px;
             }
 
-            .start {
-                text-align: right;
+            .period {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                border-top: 1px solid $border;
+                padding: 0.5em;
+
+                .label {
+                    width: 200px;
+                }
+
+                .dash {
+                    text-align: center;
+                    width: 20px;
+                }
+
+                .start, .end {
+                    width: 100px;
+                }
+
+                .start {
+                    text-align: right;
+                }
             }
         }
     }

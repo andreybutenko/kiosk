@@ -6,23 +6,24 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options:{
-                    style:'compressed'
+                    style:'compressed',
+                    trace:true
                 },
                 files: {
-                    'css/style.css' : 'scss/style.scss'
+                    'assets/css/styles.css' : 'assets/sass/main.scss'
                 }
             }
         },
         autoprefixer:{
             dist:{
                 files:{
-                    'css/style.css':'css/style.css'
+                    'assets/css/styles.css': 'assets/css/styles.css'
                 }
             }
         },
         watch: {
             css: {
-                files: 'scss/*.scss',
+                files: ['assets/sass/*.scss', 'assets/sass/*/*.scss'],
                 tasks: ['sass', 'autoprefixer']
             }
         }
