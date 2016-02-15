@@ -237,7 +237,8 @@ kiosk.factory('ServerData', ['$http', function($http) {
         },
         {
             title: 'IDEA',
-            color: '#00798c'
+            color: '#00798c',
+            type: 'ideaView'
         },
     ];
 

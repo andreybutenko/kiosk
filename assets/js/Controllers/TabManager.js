@@ -1,7 +1,7 @@
 kiosk.controller('TabManager', ['$scope', '$http', '$interval', 'ServerData', function($scope, $http, $interval, ServerData) {
     $scope.pages = ServerData.get();
 
-    $scope.activeIndex = 3;
+    $scope.activeIndex = 4;
 
     $scope.now = {
         time: '10:55',

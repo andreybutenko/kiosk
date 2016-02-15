@@ -24,6 +24,9 @@ kiosk.config(function($stateProvider, $urlRouterProvider) {
                 },
                 'scheduleView@main': {
                     templateUrl: '/views/schedule-view.html'
+                },
+                'ideaView@main': {
+                    templateUrl: '/views/idea-view.html'
                 }
             }
         });
