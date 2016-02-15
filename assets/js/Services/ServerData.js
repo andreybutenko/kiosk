@@ -238,7 +238,26 @@ kiosk.factory('ServerData', ['$http', function($http) {
         {
             title: 'IDEA',
             color: '#00798c',
-            type: 'ideaView'
+            heroImage: '/assets/img/teamIDEA.png',
+            type: 'ideaView',
+            data: {
+                title: 'Team IDEA',
+                description: 'Our classes are wrapping up their last projects and moving onto the next.',
+                columns: [
+                    {
+                        title: 'IBDT',
+                        subtitle: 'Eating on the Go',
+                        iframeUrl: 'http://instansive.com/widgets/6cd2003372ad2b83ea4ab04f889885ba67662dc9.html',
+                        description: 'Students are to design a product that makes it easier to eat on the go. 4 weeks for design & fabrication.'
+                    },
+                    {
+                        title: 'SED',
+                        subtitle: 'Wind Turbine',
+                        iframeUrl: 'http://instansive.com/widgets/839eeb230fea64479f097318ec3431bd24f22908.html',
+                        description: 'The goal of this challenge is to design a wind turbine configuration to maximize power output (minimize drag & maximize lift). 3 weeks for independent research, fabrication & measurement.'
+                    }
+                ]
+            }
         },
     ];
 

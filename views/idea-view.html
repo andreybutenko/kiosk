@@ -4,5 +4,21 @@
     ng-class="{ active: $index == activeIndex }"
     style="top: {{ ($index - activeIndex) * 100 }}%; background-color: {{ page.color }};"
 >
-    Test
+    <div class="header" style="background-image: url('{{ page.heroImage }}');">
+        <div class="content">
+            <h1 class="title">{{ page.data.title }}</h1>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="description" ng-bind-html="page.data.description"> </div>
+
+        <div class="column" ng-repeat="(columnIndex, column) in page.data.columns">
+            <h2 class="title">{{ column.title }}</h2>
+            <h3 class="subtitle">{{ column.subtitle }}</h3>
+            <iframe class="slider" src="{{ getIframeUrl(column.iframeUrl) }}"></iframe>
+            <div class="project-detail">
+                {{ column.description }}
+            </div>
+        </div>
+    </div>
 </div>

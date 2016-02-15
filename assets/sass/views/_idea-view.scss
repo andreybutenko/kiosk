@@ -1,3 +1,55 @@
 .idea-view {
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 400px;
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #232323;
+
+        .content {
+            width: 640px;
+            background-color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 40px;
+        }
+    }
+
+    .content-container {
+        width: 640px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        background-color: #ffffff;
+
+        h2, h3 {
+            text-align: center;
+        }
+
+        .description {
+            flex: 0 0 100%;
+            padding: 1em;
+        }
+
+        .column {
+            flex: 1 0 50%;
+            padding: 1em;
+
+            .slider {
+                margin-left: 50%;
+                transform: translateX(-50%);
+                border: none;
+                width: 285px;
+                height: 285px;
+            }
+        }
+    }
+
 }
