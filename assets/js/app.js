@@ -8,7 +8,8 @@ kiosk.config(function($stateProvider, $urlRouterProvider) {
             url: '/',
             views: {
                 '': {
-                    templateUrl: '/views/kiosk-container.html'
+                    templateUrl: '/views/kiosk-container.html',
+                    controller: 'TabManager',
                 },
                 'genericView@main': {
                     templateUrl: '/views/generic-view.html'
@@ -27,6 +28,14 @@ kiosk.config(function($stateProvider, $urlRouterProvider) {
                 },
                 'ideaView@main': {
                     templateUrl: '/views/idea-view.html'
+                }
+            }
+        })
+        .state('admin', {
+            url: '/admin',
+            views: {
+                '': {
+                    templateUrl: '/views/admin-view.html'
                 }
             }
         });
