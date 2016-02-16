@@ -1,0 +1,4 @@
+<div class="admin-container">
+    <div ui-view="login" class="full-view" ng-hide="user.loggedIn"></div>
+    <div ui-view="dash" class="full-view" ng-show="user.loggedIn"></div>
+</div>

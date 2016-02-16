@@ -1,0 +1,36 @@
+.admin-login {
+    height: 100%;
+    background-color: #333;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .login-container {
+        background-color: white;
+        padding: 1em;
+
+        h1 {
+            text-align: center;
+        }
+
+        input {
+            border: none;
+            border-bottom: 1px dotted $border;
+            font-size: 16px;
+            margin: 0.5em 0;
+            padding: 0.5em;
+            display: block;
+            width: 400px;
+        }
+
+        .btn {
+            background-color: $link;
+            color: white;
+            margin: 0.5em 0;
+            padding: 0.5em;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+}

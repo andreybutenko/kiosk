@@ -9,7 +9,7 @@ kiosk.config(function($stateProvider, $urlRouterProvider) {
             views: {
                 '': {
                     templateUrl: '/views/kiosk-container.html',
-                    controller: 'TabManager',
+                    controller: 'TabManager'
                 },
                 'genericView@main': {
                     templateUrl: '/views/generic-view.html'
@@ -35,7 +35,16 @@ kiosk.config(function($stateProvider, $urlRouterProvider) {
             url: '/admin',
             views: {
                 '': {
-                    templateUrl: '/views/admin-view.html'
+                    templateUrl: '/views/admin/admin-container.html',
+                    controller: 'AdminCtrl'
+                },
+                'login@admin': {
+                    templateUrl: '/views/admin/admin-login.html',
+                    controller: 'LoginCtrl'
+                },
+                'dash@admin': {
+                    templateUrl: '/views/admin/admin-dash.html',
+                    controller: 'AdminCtrl'
                 }
             }
         });

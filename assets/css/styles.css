@@ -686,4 +686,59 @@ h6 {
   height: 285px;
 }
 
+.admin-container {
+  width: 100%;
+  height: 100%;
+}
+
+.admin-container .full-view {
+  width: 100%;
+  height: 100%;
+}
+
+.admin-login {
+  height: 100%;
+  background-color: #333;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.admin-login .login-container {
+  background-color: white;
+  padding: 1em;
+}
+
+.admin-login .login-container h1 {
+  text-align: center;
+}
+
+.admin-login .login-container input {
+  border: none;
+  border-bottom: 1px dotted #ddd;
+  font-size: 16px;
+  margin: 0.5em 0;
+  padding: 0.5em;
+  display: block;
+  width: 400px;
+}
+
+.admin-login .login-container .btn {
+  background-color: #4aa3df;
+  color: white;
+  margin: 0.5em 0;
+  padding: 0.5em;
+  text-align: center;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=styles.css.map */
