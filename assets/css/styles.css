@@ -71,7 +71,7 @@ h6 {
   width: 100%;
 }
 
-.tab {
+.bar .tab {
   background-color: green;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -93,7 +93,7 @@ h6 {
   transition: -webkit-clip-path 250ms, clip-path 250ms;
 }
 
-.tab .title {
+.bar .tab .title {
   font-family: 'Oswald', sans-serif;
   font-size: 52px;
   font-weight: 700;
@@ -101,17 +101,17 @@ h6 {
   text-shadow: 6px 6px 0px rgba(0,0,0,0.5);
 }
 
-.tab:nth-of-type(odd) {
+.bar .tab:nth-of-type(odd) {
   -webkit-clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%);
   clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%);
 }
 
-.tab:nth-of-type(even) {
+.bar .tab:nth-of-type(even) {
   -webkit-clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
   clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
 }
 
-.tab.active {
+.bar .tab.active {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
@@ -739,6 +739,82 @@ h6 {
   padding: 0.5em;
   text-align: center;
   cursor: pointer;
+}
+
+.admin-dash .dash-page {
+  margin-bottom: 1em;
+}
+
+.admin-dash .dash-page .page-name {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.admin-dash .dash-page .string-label {
+  background-color: #40a1c2;
+}
+
+.admin-dash .dash-page .array-label {
+  background-color: #0ce86f;
+}
+
+.admin-dash .dash-page .object-label {
+  background-color: #fcd7ad;
+}
+
+.admin-dash .dash-page .property-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-bottom: 0.5em;
+}
+
+.admin-dash .dash-page .property-container .label {
+  text-align: center;
+  padding: 0.5em;
+  font-weight: bold;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 100px;
+  -ms-flex: 0 0 100px;
+  flex: 0 0 100px;
+  border-radius: 10px;
+}
+
+.admin-dash .dash-page .property-container .value-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: 0.5em;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex: 1;
+  flex-grow: 1;
+}
+
+.admin-dash .dash-page .property-container .string {
+  padding: 0.5em;
+  background-color: #ddd;
+  min-height: 38px;
+}
+
+.admin-dash .dash-page .property-container .array {
+  margin-top: 2em;
+}
+
+.admin-dash .dash-page .property-container .array:first-of-type {
+  margin-top: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

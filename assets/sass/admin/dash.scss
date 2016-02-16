@@ -1,0 +1,63 @@
+.admin-dash {
+    .dash-page {
+        margin-bottom: 1em;
+
+        .page-name {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .string-label {
+            background-color: #40a1c2;
+        }
+
+        .array-label {
+            background-color: #0ce86f;
+        }
+
+        .object-label {
+            background-color: #fcd7ad;
+        }
+
+        .property-container {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 0.5em;
+
+            .label {
+                text-align: center;
+                padding: 0.5em;
+
+                font-weight: bold;
+                flex: 0 0 100px;
+                border-radius: 10px;
+            }
+
+            .value-container {
+                display: flex;
+                flex-direction: column;
+                margin-left: 0.5em;
+
+                flex-grow: 1;
+            }
+
+            .node {
+
+            }
+
+            .string {
+                padding: 0.5em;
+                background-color: $border;
+                min-height: 38px;
+            }
+
+            .array {
+                margin-top: 2em;
+            }
+
+            .array:first-of-type {
+                margin-top: 0;
+            }
+        }
+    }
+}

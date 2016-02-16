@@ -44,7 +44,10 @@ kiosk.config(function($stateProvider, $urlRouterProvider) {
                 },
                 'dash@admin': {
                     templateUrl: '/views/admin/admin-dash.html',
-                    controller: 'AdminCtrl'
+                    controller: 'DashCtrl'
+                },
+                'property@admin': {
+                    templateUrl: '/views/admin/property.html'
                 }
             }
         });

@@ -1,1 +1,8 @@
-dash
+<div class="admin-dash">
+    <div class="tabs" ng-click="debug()">
+        <div class="tab" ng-repeat="page in pages">{{ page.title }}</div>
+    </div>
+    <div class="dash-page-container">
+        <div class="dash-page" ng-repeat="(pageIndex, page) in pages" compile="properties[pageIndex]"></div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 kiosk.factory('Auth', ['$http', '$rootScope', function($http, $rootScope) {
     var user = {
-        loggedIn: false,
+        loggedIn: true,
         username: '',
         token: ''
     }
