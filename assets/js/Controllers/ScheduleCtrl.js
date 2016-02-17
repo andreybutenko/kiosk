@@ -2,6 +2,12 @@ kiosk.controller('ScheduleCtrl', ['$scope', '$interval', '$window', 'ServerData'
     var viewData = ServerData.get('scheduleView');
     var schedules = viewData.data.schedules;
 
+    ServerData.subscribe(function update() {
+        viewData = ServerData.get('scheduleView');
+        schedules = viewData.data.schedules;
+        init();
+    });
+
     $scope.schedules = {};
     $scope.today = 0;
     $scope.selected = 0;

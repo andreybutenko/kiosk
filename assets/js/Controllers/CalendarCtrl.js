@@ -1,5 +1,11 @@
 kiosk.controller('CalendarCtrl', ['$scope', '$http', 'ServerData', function($scope, $http, ServerData) {
     var data = ServerData.get();
+    ServerData.subscribe(function update() {
+        data = ServerData.get();
+        setupCalendar();
+        populateCalendar();
+        formatMonth();
+    });
     var premonthBuffer = 0;
     $scope.imageUrl = '/assets/img/february2016%20-%20PopArt%20Studio.png';
     $scope.imageCredit = 'PopArt Studio'

@@ -746,8 +746,17 @@ h6 {
 
 .admin-login .login-container .btn {
   background-color: #4aa3df;
-  color: white;
-  margin: 0.5em 0;
+  color: #ffffff;
+  margin: 1em 0;
+  padding: 0.5em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.admin-login .login-container .err {
+  background-color: #cf000f;
+  color: #ffffff;
+  margin: 1em 0;
   padding: 0.5em;
   text-align: center;
   cursor: pointer;
@@ -798,6 +807,11 @@ h6 {
 .admin-dash .tabs .tab:hover,
 .admin-dash .tabs-float .tab:hover {
   background-color: #575757;
+}
+
+.admin-dash .tabs .tab.save,
+.admin-dash .tabs-float .tab.save {
+  background-color: #27ae60;
 }
 
 .admin-dash .dash-page-container {

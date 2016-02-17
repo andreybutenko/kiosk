@@ -1,6 +1,10 @@
 kiosk.controller('DashCtrl', ['$scope', '$window', '$interpolate', '$rootScope', '$state', 'Auth', 'ServerData', function($scope, $window, $interpolate, $rootScope, $state, Auth, ServerData) {
     $scope.pages = ServerData.get();
-    $scope.properties = []
+    ServerData.subscribe(function update() {
+        $scope.pages = ServerData.get();
+        reload();
+    });
+    $scope.properties = [];
 
     // Tab Code
     $scope.tab = 0;
@@ -11,8 +15,15 @@ kiosk.controller('DashCtrl', ['$scope', '$window', '$interpolate', '$rootScope',
     $scope.preview = function preview() {
         $state.go('main', { showBack: true });
     }
+    $scope.logout = function logout() {
+        $window.location.reload();
+    }
 
     // Editor Code
+    $scope.upload = function upload() {
+        ServerData.upload($scope.pages);
+    }
+
     $scope.addElement = function addElement(selected) {
         var array = eval('$scope.pages' + selected);
         var newArrayElement = {};

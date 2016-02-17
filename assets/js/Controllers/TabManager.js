@@ -1,9 +1,12 @@
 kiosk.controller('TabManager', ['$scope', '$http', '$interval', '$stateParams', 'ServerData', function($scope, $http, $interval, $stateParams, ServerData) {
     $scope.pages = ServerData.get();
 
+    ServerData.subscribe(function update() {
+        $scope.pages = ServerData.get();
+    });
+
     $scope.activeIndex = 0;
 
-console.log($stateParams)
     $scope.showBack = $stateParams.showBack;
 
     $scope.now = {

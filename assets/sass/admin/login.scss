@@ -26,8 +26,17 @@
 
         .btn {
             background-color: $link;
-            color: white;
-            margin: 0.5em 0;
+            color: #ffffff;
+            margin: 1em 0;
+            padding: 0.5em;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .err {
+            background-color: #cf000f;
+            color: #ffffff;
+            margin: 1em 0;
             padding: 0.5em;
             text-align: center;
             cursor: pointer;

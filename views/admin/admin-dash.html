@@ -3,6 +3,8 @@
     <div class="tabs tabs-float">
         <div class="tab" ng-repeat="(pageIndex, page) in pages" ng-class="{ 'selected': tab == pageIndex }" ng-click="switchTo(pageIndex)">{{ page.title }}</div>
         <div class="tab" ng-click="preview()">Preview</div>
+        <div class="tab save" ng-click="upload()">Save</div>
+        <div class="tab" ng-click="logout()">Log out</div>
     </div>
     <div class="dash-page-container">
         <div class="dash-page" ng-repeat="(pageIndex, page) in pages" compile="properties[pageIndex]" ng-show="tab == pageIndex"></div>

@@ -1,17 +1,44 @@
 kiosk.factory('Auth', ['$http', '$rootScope', function($http, $rootScope) {
     var user = {
-        loggedIn: true,
+        error: false,
+        loggedIn: false,
         username: '',
-        token: ''
+        pass: ''
     }
 
     function login(userData) {
-        userData = {
-            loggedIn: true,
-            username: userData.username,
-            token: ''
-        };
-        updateUserData(userData);
+        $http.post('/api/login', {
+            "user": userData.user,
+            "pass": userData.pass
+        })
+        .then(function success(response) {
+            if(response.data.verified == true) {
+                updateUserData({
+                    error: false,
+                    loggedIn: true,
+                    user: userData.user,
+                    pass: userData.pass
+                });
+            }
+            else {
+                updateUserData({
+                    error: 'Username or password incorrect. Ensure that neither are typed incorrectly.',
+                    loggedIn: false,
+                    user: '',
+                    pass: ''
+                });
+                console.log(response);
+            }
+        },
+        function fail(data) {
+            updateUserData({
+                error: 'Connection to server failed. Try again later, or contact someone relevant.',
+                loggedIn: false,
+                user: '',
+                pass: ''
+            });
+            console.log(data);
+        });
     }
 
     function getUserData() {
