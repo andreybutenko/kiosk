@@ -1,7 +1,10 @@
-kiosk.controller('TabManager', ['$scope', '$http', '$interval', 'ServerData', function($scope, $http, $interval, ServerData) {
+kiosk.controller('TabManager', ['$scope', '$http', '$interval', '$stateParams', 'ServerData', function($scope, $http, $interval, $stateParams, ServerData) {
     $scope.pages = ServerData.get();
 
     $scope.activeIndex = 0;
+
+console.log($stateParams)
+    $scope.showBack = $stateParams.showBack;
 
     $scope.now = {
         time: '10:55',

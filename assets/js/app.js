@@ -6,6 +6,9 @@ kiosk.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('main', {
             url: '/',
+            params: {
+                'showBack': false
+            },
             views: {
                 '': {
                     templateUrl: '/views/kiosk-container.html',

@@ -168,6 +168,18 @@ h6 {
   transition: top 250ms;
 }
 
+.back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2em;
+  color: #ffffff;
+  background-color: #cf000f;
+  z-index: 999;
+  text-align: center;
+}
+
 .front-view {
   display: -webkit-box;
   display: -webkit-flex;
@@ -741,17 +753,72 @@ h6 {
   cursor: pointer;
 }
 
-.admin-dash .dash-page {
+.admin-dash {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.admin-dash .tabs-float {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+}
+
+.admin-dash .tabs,
+.admin-dash .tabs-float {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 200px;
+  -ms-flex: 0 0 200px;
+  flex: 0 0 200px;
+  background-color: #333333;
+  color: white;
+}
+
+.admin-dash .tabs .tab,
+.admin-dash .tabs-float .tab {
+  padding: 0.5em;
+  border-bottom: #ddd 1px solid;
+  -webkit-transition: background-color 250ms, color 250ms;
+  transition: background-color 250ms, color 250ms;
+  cursor: pointer;
+}
+
+.admin-dash .tabs .tab.selected,
+.admin-dash .tabs-float .tab.selected {
+  background-color: #ddd;
+  color: black;
+}
+
+.admin-dash .tabs .tab:hover,
+.admin-dash .tabs-float .tab:hover {
+  background-color: #575757;
+}
+
+.admin-dash .dash-page-container {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex: 1;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.admin-dash .dash-page-container .dash-page {
   margin-bottom: 1em;
   max-width: 100%;
 }
 
-.admin-dash .dash-page .page-name {
+.admin-dash .dash-page-container .dash-page .page-name {
   font-size: 1.5em;
   font-weight: bold;
 }
 
-.admin-dash .dash-page .property-container {
+.admin-dash .dash-page-container .dash-page .property-container {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -764,7 +831,7 @@ h6 {
   margin-bottom: 0.5em;
 }
 
-.admin-dash .dash-page .property-container .label {
+.admin-dash .dash-page-container .dash-page .property-container .label {
   text-align: center;
   padding: 0.5em;
   font-weight: bold;
@@ -775,20 +842,20 @@ h6 {
   border-radius: 10px;
 }
 
-.admin-dash .dash-page .property-container .label.string-label {
+.admin-dash .dash-page-container .dash-page .property-container .label.string-label {
   background-color: #40a1c2;
 }
 
-.admin-dash .dash-page .property-container .label.array-label {
+.admin-dash .dash-page-container .dash-page .property-container .label.array-label {
   background-color: #0ce86f;
   margin-top: 2em;
 }
 
-.admin-dash .dash-page .property-container .label.object-label {
+.admin-dash .dash-page-container .dash-page .property-container .label.object-label {
   background-color: #fcd7ad;
 }
 
-.admin-dash .dash-page .property-container .value-container {
+.admin-dash .dash-page-container .dash-page .property-container .value-container {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -805,24 +872,24 @@ h6 {
   flex-grow: 1;
 }
 
-.admin-dash .dash-page .property-container .value-container .string {
+.admin-dash .dash-page-container .dash-page .property-container .value-container .string {
   padding: 0.5em;
   background-color: #ddd;
   min-height: 38px;
 }
 
-.admin-dash .dash-page .property-container .value-container .array {
+.admin-dash .dash-page-container .dash-page .property-container .value-container .array {
   margin-top: 2em;
   background-color: #6c7a89;
   border-radius: 5px;
   padding: 1em;
 }
 
-.admin-dash .dash-page .property-container .value-container .array.first-of-type {
+.admin-dash .dash-page-container .dash-page .property-container .value-container .array.first-of-type {
   margin-top: 0;
 }
 
-.admin-dash .dash-page .property-container .value-container .add-element {
+.admin-dash .dash-page-container .dash-page .property-container .value-container .add-element {
   color: #ffffff;
   background-color: #1c448e;
   text-align: center;
@@ -836,7 +903,7 @@ h6 {
   cursor: pointer;
 }
 
-.admin-dash .dash-page .property-container .remove-element {
+.admin-dash .dash-page-container .dash-page .property-container .remove-element {
   color: #ffffff;
   background-color: #cf000f;
   text-align: center;
@@ -846,6 +913,16 @@ h6 {
   margin-left: -webkit-calc(50% - 100px);
   margin-left: calc(50% - 100px);
   cursor: pointer;
+}
+
+.admin-dash .dash-preview-container {
+  width: 100%;
+  height: 100%;
+}
+
+.admin-dash .dash-preview-container iframe {
+  width: 1080px;
+  height: 1920px;
 }
 
 /*# sourceMappingURL=styles.css.map */

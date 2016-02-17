@@ -1,87 +1,136 @@
 .admin-dash {
-    .dash-page {
-        margin-bottom: 1em;
-        max-width: 100%;
+    display: flex;
+    width: 100%;
+    height: 100%;
 
-        .page-name {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
+    .tabs-float {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 200px;
+    }
 
-        .property-container {
-            display: flex;
-            flex-direction: row;
-            margin-bottom: 0.5em;
+    .tabs, .tabs-float {
+        flex: 0 0 200px;
+        background-color: #333333;
+        color: white;
 
-            .label {
-                text-align: center;
-                padding: 0.5em;
+        .tab {
+            padding: 0.5em;
+            border-bottom: $border 1px solid;
+            transition: background-color 250ms, color 250ms;
+            cursor: pointer;
 
-                font-weight: bold;
-                flex: 0 0 100px;
-                border-radius: 10px;
-
-                &.string-label {
-                    background-color: #40a1c2;
-                }
-
-                &.array-label {
-                    background-color: #0ce86f;
-                    margin-top: 2em;
-                }
-
-                &.object-label {
-                    background-color: #fcd7ad;
-                }
+            &.selected {
+                background-color: $border;
+                color: black;
             }
 
-            .value-container {
+            &:hover {
+                background-color: #575757;
+            }
+        }
+    }
+
+    .dash-page-container {
+        flex-grow: 1;
+        padding: 10px;
+
+        .dash-page {
+            margin-bottom: 1em;
+            max-width: 100%;
+
+            .page-name {
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+
+            .property-container {
                 display: flex;
-                flex-direction: column;
-                margin-left: 0.5em;
+                flex-direction: row;
+                margin-bottom: 0.5em;
 
-                flex-grow: 1;
-
-                .string {
+                .label {
+                    text-align: center;
                     padding: 0.5em;
-                    background-color: $border;
-                    min-height: 38px;
-                }
 
-                .array {
-                    margin-top: 2em;
-                    background-color: #6c7a89;
-                    border-radius: 5px;
-                    padding: 1em;
+                    font-weight: bold;
+                    flex: 0 0 100px;
+                    border-radius: 10px;
 
-                    &.first-of-type {
-                        margin-top: 0;
+                    &.string-label {
+                        background-color: #40a1c2;
+                    }
+
+                    &.array-label {
+                        background-color: #0ce86f;
+                        margin-top: 2em;
+                    }
+
+                    &.object-label {
+                        background-color: #fcd7ad;
                     }
                 }
 
-                .add-element {
+                .value-container {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 0.5em;
+
+                    flex-grow: 1;
+
+                    .string {
+                        padding: 0.5em;
+                        background-color: $border;
+                        min-height: 38px;
+                    }
+
+                    .array {
+                        margin-top: 2em;
+                        background-color: #6c7a89;
+                        border-radius: 5px;
+                        padding: 1em;
+
+                        &.first-of-type {
+                            margin-top: 0;
+                        }
+                    }
+
+                    .add-element {
+                        color: #ffffff;
+                        background-color: #1c448e;
+                        text-align: center;
+                        margin-top: 2em;
+                        padding: 0.5em 1em;
+                        border-radius: 5px;
+                        max-width: 500px;
+                        align-self: center;
+                        cursor: pointer;
+                    }
+                }
+
+                .remove-element {
                     color: #ffffff;
-                    background-color: #1c448e;
+                    background-color: #cf000f;
                     text-align: center;
-                    margin-top: 2em;
                     padding: 0.5em 1em;
                     border-radius: 5px;
-                    max-width: 500px;
-                    align-self: center;
+                    max-width: 200px;
+                    margin-left: calc(50% - 100px);
                     cursor: pointer;
                 }
             }
+        }
+    }
 
-            .remove-element {
-                color: #ffffff;
-                background-color: #cf000f;
-                text-align: center;
-                padding: 0.5em 1em;
-                border-radius: 5px;
-                max-width: 200px;
-                margin-left: calc(50% - 100px);
-                cursor: pointer;
-            }
+    .dash-preview-container {
+        width: 100%;
+        height: 100%;
+
+        iframe {
+            width: 1080px;
+            height: 1920px;
         }
     }
 }

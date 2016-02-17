@@ -1,7 +1,18 @@
-kiosk.controller('DashCtrl', ['$scope', '$sce', '$interpolate', 'Auth', 'ServerData', function($scope, $sce, $interpolate, Auth, ServerData) {
+kiosk.controller('DashCtrl', ['$scope', '$window', '$interpolate', '$rootScope', '$state', 'Auth', 'ServerData', function($scope, $window, $interpolate, $rootScope, $state, Auth, ServerData) {
     $scope.pages = ServerData.get();
     $scope.properties = []
 
+    // Tab Code
+    $scope.tab = 0;
+    $scope.switchTo = function switchTo(tabIndex) {
+        $scope.tab = tabIndex;
+        $window.scrollTo(0, 0);
+    }
+    $scope.preview = function preview() {
+        $state.go('main', { showBack: true });
+    }
+
+    // Editor Code
     $scope.addElement = function addElement(selected) {
         var array = eval('$scope.pages' + selected);
         var newArrayElement = {};
