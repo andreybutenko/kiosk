@@ -1,22 +1,11 @@
 .admin-dash {
     .dash-page {
         margin-bottom: 1em;
+        max-width: 100%;
 
         .page-name {
             font-size: 1.5em;
             font-weight: bold;
-        }
-
-        .string-label {
-            background-color: #40a1c2;
-        }
-
-        .array-label {
-            background-color: #0ce86f;
-        }
-
-        .object-label {
-            background-color: #fcd7ad;
         }
 
         .property-container {
@@ -31,6 +20,19 @@
                 font-weight: bold;
                 flex: 0 0 100px;
                 border-radius: 10px;
+
+                &.string-label {
+                    background-color: #40a1c2;
+                }
+
+                &.array-label {
+                    background-color: #0ce86f;
+                    margin-top: 2em;
+                }
+
+                &.object-label {
+                    background-color: #fcd7ad;
+                }
             }
 
             .value-container {
@@ -39,24 +41,46 @@
                 margin-left: 0.5em;
 
                 flex-grow: 1;
+
+                .string {
+                    padding: 0.5em;
+                    background-color: $border;
+                    min-height: 38px;
+                }
+
+                .array {
+                    margin-top: 2em;
+                    background-color: #6c7a89;
+                    border-radius: 5px;
+                    padding: 1em;
+
+                    &.first-of-type {
+                        margin-top: 0;
+                    }
+                }
+
+                .add-element {
+                    color: #ffffff;
+                    background-color: #1c448e;
+                    text-align: center;
+                    margin-top: 2em;
+                    padding: 0.5em 1em;
+                    border-radius: 5px;
+                    max-width: 500px;
+                    align-self: center;
+                    cursor: pointer;
+                }
             }
 
-            .node {
-
-            }
-
-            .string {
-                padding: 0.5em;
-                background-color: $border;
-                min-height: 38px;
-            }
-
-            .array {
-                margin-top: 2em;
-            }
-
-            .array:first-of-type {
-                margin-top: 0;
+            .remove-element {
+                color: #ffffff;
+                background-color: #cf000f;
+                text-align: center;
+                padding: 0.5em 1em;
+                border-radius: 5px;
+                max-width: 200px;
+                margin-left: calc(50% - 100px);
+                cursor: pointer;
             }
         }
     }

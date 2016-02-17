@@ -2,13 +2,36 @@ kiosk.controller('DashCtrl', ['$scope', '$sce', '$interpolate', 'Auth', 'ServerD
     $scope.pages = ServerData.get();
     $scope.properties = []
 
-    for(var i = 0; i < $scope.pages.length; i++) {
-        var pageHTML = '';
+    $scope.addElement = function addElement(selected) {
+        var array = eval('$scope.pages' + selected);
+        var newArrayElement = {};
 
-        pageHTML += generateProperty(i, $scope.pages[i], '', 'page');
+        for(var property in array[0]) {
+            newArrayElement[property] = '';
+        }
 
-        $scope.properties[i] = pageHTML;
+        array.push(newArrayElement);
+        reload();
     }
+
+    $scope.removeElement = function removeElement(selected, index) {
+        var array = eval('$scope.pages' + selected);
+        array.splice(index, 1);
+
+        reload();
+    }
+
+    function reload() {
+        for(var i = 0; i < $scope.pages.length; i++) {
+            var pageHTML = '';
+
+            pageHTML += generateProperty(i, $scope.pages[i], '', 'page');
+
+            $scope.properties[i] = pageHTML;
+        }
+    }
+
+    reload();
 
     function traceify(attr) {
         if(isNaN(attr)) {
@@ -36,6 +59,11 @@ kiosk.controller('DashCtrl', ['$scope', '$sce', '$interpolate', 'Auth', 'ServerD
 
     function generateProperty(attr, value, trace, special) {
         var propertyHTML = '';
+
+        if(attr == '$$hashKey') {
+            return propertyHTML;
+        }
+
         if(special == 'page') {
             propertyHTML += '<div class="page-name">{{ pages' + traceify(attr) + traceify('title') + ' }}</div>';
         }
@@ -59,8 +87,23 @@ kiosk.controller('DashCtrl', ['$scope', '$sce', '$interpolate', 'Auth', 'ServerD
         if(getType(value) == 'array') {
             propertyHTML += '<div class="value-container">';
             for(var property in value) {
-                propertyHTML += '<div class="array node">' + generateProperty(property, value[property], trace + traceify(attr), 'array') + '</div>';
+                propertyHTML += '<div class="array node">';
+                propertyHTML += generateProperty(property, value[property], trace + traceify(attr), 'array');
+                propertyHTML += '<div class="remove-element" ng-click="removeElement(\'' + trace + traceify(attr) + '\', ' + property + ')">Remove this element</div>';
+                propertyHTML += '</div>';
             }
+
+            var readibleTrace = '';
+            var fullTrace = trace;
+            fullTrace = fullTrace.split('.');
+            for(var i = 1; i < fullTrace.length; i++) {
+                readibleTrace += fullTrace[i] + '.';
+            }
+            readibleTrace += traceify(attr);
+            readibleTrace = readibleTrace.replace('..', '.');
+
+            propertyHTML += '<div class="add-element" ng-click="addElement(\'' + trace + traceify(attr) + '\')">Add a new element to ' + readibleTrace + '</div>';
+
             propertyHTML += '</div>';
         }
 

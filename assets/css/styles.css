@@ -743,23 +743,12 @@ h6 {
 
 .admin-dash .dash-page {
   margin-bottom: 1em;
+  max-width: 100%;
 }
 
 .admin-dash .dash-page .page-name {
   font-size: 1.5em;
   font-weight: bold;
-}
-
-.admin-dash .dash-page .string-label {
-  background-color: #40a1c2;
-}
-
-.admin-dash .dash-page .array-label {
-  background-color: #0ce86f;
-}
-
-.admin-dash .dash-page .object-label {
-  background-color: #fcd7ad;
 }
 
 .admin-dash .dash-page .property-container {
@@ -786,6 +775,19 @@ h6 {
   border-radius: 10px;
 }
 
+.admin-dash .dash-page .property-container .label.string-label {
+  background-color: #40a1c2;
+}
+
+.admin-dash .dash-page .property-container .label.array-label {
+  background-color: #0ce86f;
+  margin-top: 2em;
+}
+
+.admin-dash .dash-page .property-container .label.object-label {
+  background-color: #fcd7ad;
+}
+
 .admin-dash .dash-page .property-container .value-container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -803,18 +805,47 @@ h6 {
   flex-grow: 1;
 }
 
-.admin-dash .dash-page .property-container .string {
+.admin-dash .dash-page .property-container .value-container .string {
   padding: 0.5em;
   background-color: #ddd;
   min-height: 38px;
 }
 
-.admin-dash .dash-page .property-container .array {
+.admin-dash .dash-page .property-container .value-container .array {
   margin-top: 2em;
+  background-color: #6c7a89;
+  border-radius: 5px;
+  padding: 1em;
 }
 
-.admin-dash .dash-page .property-container .array:first-of-type {
+.admin-dash .dash-page .property-container .value-container .array.first-of-type {
   margin-top: 0;
+}
+
+.admin-dash .dash-page .property-container .value-container .add-element {
+  color: #ffffff;
+  background-color: #1c448e;
+  text-align: center;
+  margin-top: 2em;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  max-width: 500px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  cursor: pointer;
+}
+
+.admin-dash .dash-page .property-container .remove-element {
+  color: #ffffff;
+  background-color: #cf000f;
+  text-align: center;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  max-width: 200px;
+  margin-left: -webkit-calc(50% - 100px);
+  margin-left: calc(50% - 100px);
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map */
